@@ -68,7 +68,7 @@ export default function Patch(props) {
             })}
           </Box>
           <Box width='15.1vw' pl='5vw' align='right'>
-            <Box 
+            <Box pb='1'
               style={{ textTransform: "uppercase" }}
             >{`${props.cirSup.toLocaleString(undefined, {
               maximumFractionDigits: 0,
