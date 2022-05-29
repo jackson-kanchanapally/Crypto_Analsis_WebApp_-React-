@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import {HStack,Select} from "@chakra-ui/react";
 import axios from "axios";
 import Patch from "./Patch";
-import { Box } from "@chakra-ui/react";
-
+import { Box,Image} from "@chakra-ui/react";
+import logo from './cryptoanal.png'
 export default function Cryp() {
   const [price, setPrice] = useState([]);
   const [cur, setCur] = useState("usd");
@@ -24,8 +24,11 @@ export default function Cryp() {
  
   return (
     <Box height="110%" backgroundColor="gray.700">
-     <HStack height='10vh' backgroundColor='gray.900' mb='8'>
-     <Select variant='flushed' onChange={changeTop} ml='70vw' width='25%' value={top}  color='gray.500' placeholder='Select option'>
+     <HStack height='10%' backgroundColor='gray.900' mb='8'  width='100%' position='fixed' zIndex='2'>
+         
+         <Image pl='4vw' pb='1vh' src={logo} height='75%'></Image>
+         
+     <Select variant='flushed' onChange={changeTop} width='25vw' value={top}  color='gray.500' placeholder='Select option'>
   <option bg='red' value='10'>Top 10</option>
   <option value='50'>Top 50</option>
   <option value='100'>Top 100</option>
@@ -34,7 +37,7 @@ export default function Cryp() {
 </Select>
      </HStack>
 
-      <Box align='center'>
+      <Box height='90%' pt='6%' pb='2%' align='center'>
         <HStack align='center' width='90%' height='10' bg='gray.900'>
             <Box ml='5%' color='white'>Rank</Box>
             <Box pl='5%' color='white'>Name</Box>

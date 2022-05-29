@@ -78,14 +78,14 @@ export default function Patch(props) {
                 align="left"
                 position="absolute"
                 borderRadius="full"
-                backgroundColor="red"
+                backgroundColor="gray.600"
                 width="10vw"
                 height="1"
               >
                 <Box
                   position="absolute"
                   borderRadius="full"
-                  backgroundColor="gray.400"
+                  backgroundColor="gray.300"
                   width={`${(props.totSup/props.cirSup)*80}%`} 
                   height="1"
                 ></Box>
