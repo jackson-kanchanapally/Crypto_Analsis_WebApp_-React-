@@ -1,24 +1,30 @@
-import React from "react";
-import { HStack, Box, Image} from "@chakra-ui/react";
+import React,{useState} from "react";
+import { HStack, Box, Image,StatArrow,Stat} from "@chakra-ui/react";
 export default function Patch(props) {
   const d = props.dayH;
-  
+
   return (
-    <Box align="center" width='100vw'>
+    <Box align="center" width="100vw">
       <Box
         width={["100%", "90%"]}
         borderRadius="lg"
         backgroundColor="gray.900"
         color="gray.100"
       >
-        <HStack width={["100%","90%"]} mt="2" height="10vh" flexDirection="row" p={["0","2"]}>
-          <Box ml={['-7%','0']} width={["8","16"]} align="center" mr="4">
+        <HStack
+          width={["100%", "90%"]}
+          mt="2"
+          height="10vh"
+          flexDirection="row"
+          p={["0", "2"]}
+        >
+          <Box ml={["-7%", "0"]} width={["8", "16"]} align="center" mr="4">
             {props.rank}
           </Box>
-          <HStack fontSize={["15",""]} width={["98vw","18vw"]} >
+          <HStack fontSize={["15", ""]} width={["98vw", "18vw"]}>
             <Image
               borderRadius="full"
-              boxSize={["2vh","3.5vh"]}
+              boxSize={["2vh", "3.5vh"]}
               src={props.image}
             ></Image>
             <Box>{props.name}</Box>
@@ -26,22 +32,36 @@ export default function Patch(props) {
               {props.symb}
             </Box>
           </HStack>
-          <Box  position={['relative','none']} left={['5%','0']} pr={["8%","0"]} pl={['0%','0']} align='right' width={["85vw","9vw"]}>
+          <Box
+            position={["relative", "none"]}
+            left={["5%", "0"]}
+            pr={["8%", "0"]}
+            pl={["0%", "0"]}
+            align="right"
+            width={["85vw", "9vw"]}
+          >
             {props.cur} {props.price.toFixed(1)}
           </Box>
 
           {/* <Box width='7vw' color='green'>{(100*props.dayh/props.price).toFixed(2)}</Box> */}
-          <Box
+        
+        <HStack spacing={['0','-5']}
             align="right"
-           
-            position={['relative',""]}
-            left={['5%',"0"]}
-            pl={['0','1']}
-            width={["23vw","6vw"]}
+            position={["relative", ""]}
+            left={["5%", "0"]}
+            pl={["0", "1"]}
+            width={["35vw", "6vw"]}
             fontWeight="semibold"
             color={d > 0 ? "green.300" : "red"}
-          >{`${d.toFixed(2)}%`}</Box>
-          <Box display={["none", "", "", "block"]} width={["0","9.5vw"]} align="right">
+          > <Stat>
+          <StatArrow type={d>0?"increase":"decrease"}></StatArrow>
+          </Stat>
+            <Box>{`${d.toFixed(2)}%`}</Box></HStack>
+          <Box
+            display={["none", "", "", "block"]}
+            width={["0", "9.5vw"]}
+            align="right"
+          >
             {props.cur}
             {props.marCap.toLocaleString(undefined, {
               maximumFractionDigits: 3,
