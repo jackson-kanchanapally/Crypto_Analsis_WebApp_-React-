@@ -21,11 +21,11 @@ export default function Cryp() {
 
   const changeTop = (e) => {
     setTop(e.target.value);
-    console.log(e.target.value);
+    e.preventDefault()
   };
   const change = (e) => {
-    // setCur(e.target.value)
     setCur(e.target.value);
+    e.preventDefault()
     switch (e.target.value) {
       case "USD":
         setSym("$");
