@@ -4,16 +4,18 @@ import axios from "axios";
 import Patch from "./Patch";
 import { Box,Image} from "@chakra-ui/react";
 import logo from './cryptoanal.png'
+import loading from './loading.gif'
 export default function Cryp() {
   const [price, setPrice] = useState([]);
   const [cur, setCur] = useState("USD");
   const [top, setTop] = useState(10);
   const [sym, setSym] = useState("$");
+  const [load,setLoad]=useState(true)
   const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${cur}&order=market_cap_desc&per_page=${top}&page=1&sparkline=false`;
   useEffect(() => {
     axios.get(url).then((res) => {
       setPrice(res.data);
-      console.log(res.data);
+      setLoad(false)
     });
   }, [url]);
 
@@ -70,7 +72,9 @@ export default function Cryp() {
   <option value='DOT'>DOT</option>
 </Select>
      </HStack>
-
+     {load===true? <Box align='center' height='75vh' mt='25vh'>
+        <Image height={['30vh','50vh']} src={loading}></Image>
+      </Box> :
       <Box height='90%' pt={['10vh','6%']} pb='2%' align='center'>
         <HStack align='center' width={['100%','90%']} height='10' bg='gray.900'>
             <Box ml='5%' display={["none", "", "", "block"]} color='white'>Rank</Box>
@@ -98,6 +102,7 @@ export default function Cryp() {
           </Box>
         ))}
       </Box>
+        }
     </Box>
   );
 }
