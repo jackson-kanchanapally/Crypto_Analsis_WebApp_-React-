@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { Flex, HStack, Box, Image } from "@chakra-ui/react";
+import React from "react";
+import { HStack, Box, Image} from "@chakra-ui/react";
 export default function Patch(props) {
   const d = props.dayH;
-  const [sym, setSym] = useState("$");
-  const [cur, setCur] = useState("usd");
   
   return (
     <Box align="center" width='100vw'>
@@ -28,14 +26,15 @@ export default function Patch(props) {
               {props.symb}
             </Box>
           </HStack>
-          <Box align={["left","right"]} width={["55vw","9vw"]}>
+          <Box pl={['4%','']} align={["left","right"]} width={["55vw","9vw"]}>
             {props.cur} {props.price.toFixed(3)}
           </Box>
 
           {/* <Box width='7vw' color='green'>{(100*props.dayh/props.price).toFixed(2)}</Box> */}
           <Box
             align="right"
-            width={["15vw","6vw"]}
+            pl={['10%','1']}
+            width={["23vw","6vw"]}
             fontWeight="semibold"
             color={d > 0 ? "green.300" : "red"}
           >{`${d.toFixed(2)}%`}</Box>

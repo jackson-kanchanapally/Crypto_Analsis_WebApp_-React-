@@ -74,9 +74,9 @@ export default function Cryp() {
       <Box height='90%' pt={['20%','6%']} pb='2%' align='center'>
         <HStack align='center' width={['100%','90%']} height='10' bg='gray.900'>
             <Box ml='5%' display={["none", "", "", "block"]} color='white'>Rank</Box>
-            <Box pl='5%' color='white'>Name</Box>
-            <Box pl={['25%','18%']} color='white'>Current Price</Box>
-            <Box pl={['8%','3%']} color='white'>24h %</Box>
+            <Box pl={['9%','5%']} color='white'>Name</Box>
+            <Box pl={['20%','18%']} color='white'>Current Price</Box>
+            <Box pl={['10%','3%']} color='white'>24h %</Box>
             <Box pl='5%' display={["none", "", "", "block"]} color='white'>Market Cap</Box>
             <Box pl='7%' display={["none", "", "", "block"]} color='white'>Circulating Supply</Box>
         </HStack>
