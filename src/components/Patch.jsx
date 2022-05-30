@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { HStack, Box, Image,StatArrow,Stat} from "@chakra-ui/react";
 export default function Patch(props) {
   const d = props.dayH;
@@ -21,7 +21,7 @@ export default function Patch(props) {
           <Box ml={["-7%", "0"]} width={["8", "16"]} align="center" mr="4">
             {props.rank}
           </Box>
-          <HStack fontSize={["15", ""]} width={["98vw", "18vw"]}>
+          <HStack fontSize={["15", ""]} width={["99vw", "18vw"]}>
             <Image
               borderRadius="full"
               boxSize={["2vh", "3.5vh"]}
@@ -50,7 +50,7 @@ export default function Patch(props) {
             position={["relative", ""]}
             left={["5%", "0"]}
             pl={["0", "1"]}
-            width={["35vw", "6vw"]}
+            width={["15vw", "6vw"]}
             fontWeight="semibold"
             color={d > 0 ? "green.300" : "red"}
           > <Stat>
