@@ -45,9 +45,9 @@ export default function Cryp() {
 
   return (
     <Box height="100%" width='100vw' backgroundColor="gray.700" overflow='hidden'>
-     <HStack height='10%' backgroundColor='gray.900' mb='8'  width='100%' position='fixed' zIndex='2'>
+     <HStack height={['8vh','10vh']} backgroundColor='gray.900'  width='100%' position='fixed' zIndex='2'>
          
-         <Image pl={['0vw','4vw']} pb='1vh' src={logo} height={['98%','95%']} pr={["6vw","50vw"]}></Image>
+         <Image pl={['0vw','4vw']} mb='1vh' src={logo} height={['80%','95%']} pr={["6vw","50vw"]}></Image>
          
      <Select variant='flushed' onChange={changeTop} width={['25vw','15vw']} value={top}  color='gray.500' placeholder='Select option'>
   <option bg='red' value='10'>Top 10</option>
@@ -71,11 +71,11 @@ export default function Cryp() {
 </Select>
      </HStack>
 
-      <Box height='90%' pt={['20%','6%']} pb='2%' align='center'>
+      <Box height='90%' pt={['10vh','6%']} pb='2%' align='center'>
         <HStack align='center' width={['100%','90%']} height='10' bg='gray.900'>
             <Box ml='5%' display={["none", "", "", "block"]} color='white'>Rank</Box>
             <Box pl={['9%','5%']} color='white'>Name</Box>
-            <Box pl={['20%','18%']} color='white'>Current Price</Box>
+            <Box pl={['25%','18%']} color='white'>Current Price</Box>
             <Box pl={['10%','3%']} color='white'>24h %</Box>
             <Box pl='5%' display={["none", "", "", "block"]} color='white'>Market Cap</Box>
             <Box pl='7%' display={["none", "", "", "block"]} color='white'>Circulating Supply</Box>

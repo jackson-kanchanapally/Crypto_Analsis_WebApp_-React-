@@ -11,11 +11,11 @@ export default function Patch(props) {
         backgroundColor="gray.900"
         color="gray.100"
       >
-        <HStack width={["100%","90%"]} mt="2" height="10vh" flexDirection="row" p={["","2"]}>
-          <Box ml="-5" width={["8","16"]} align="center" mr="4">
+        <HStack width={["100%","90%"]} mt="2" height="10vh" flexDirection="row" p={["0","2"]}>
+          <Box ml={['-7%','0']} width={["8","16"]} align="center" mr="4">
             {props.rank}
           </Box>
-          <HStack fontSize={["15",""]} width={["55vw","18vw"]} >
+          <HStack fontSize={["15",""]} width={["98vw","18vw"]} >
             <Image
               borderRadius="full"
               boxSize={["2vh","3.5vh"]}
@@ -26,20 +26,23 @@ export default function Patch(props) {
               {props.symb}
             </Box>
           </HStack>
-          <Box pl={['4%','']} align={["left","right"]} width={["55vw","9vw"]}>
-            {props.cur} {props.price.toFixed(3)}
+          <Box  position={['relative','none']} left={['5%','0']} pr={["8%","0"]} pl={['0%','0']} align='right' width={["85vw","9vw"]}>
+            {props.cur} {props.price.toFixed(1)}
           </Box>
 
           {/* <Box width='7vw' color='green'>{(100*props.dayh/props.price).toFixed(2)}</Box> */}
           <Box
             align="right"
-            pl={['10%','1']}
+           
+            position={['relative',""]}
+            left={['5%',"0"]}
+            pl={['0','1']}
             width={["23vw","6vw"]}
             fontWeight="semibold"
             color={d > 0 ? "green.300" : "red"}
           >{`${d.toFixed(2)}%`}</Box>
-          <Box display={["none", "", "", "block"]} width="9.5vw" align="right">
-            $
+          <Box display={["none", "", "", "block"]} width={["0","9.5vw"]} align="right">
+            {props.cur}
             {props.marCap.toLocaleString(undefined, {
               maximumFractionDigits: 3,
             })}
