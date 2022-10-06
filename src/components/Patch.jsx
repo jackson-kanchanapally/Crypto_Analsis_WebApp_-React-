@@ -1,8 +1,10 @@
 import React from "react";
 import { HStack, Box, Image,StatArrow,Stat,Progress} from "@chakra-ui/react";
+
+
 export default function Patch(props) {
   const d = props.dayH;
-
+  
   return (
     <Box align="center" width="100vw">
       <Box
@@ -27,6 +29,7 @@ export default function Patch(props) {
               boxSize={["2.5vh", "3.5vh"]}
               src={props.image}
             ></Image>
+       
             <Box>{props.name}</Box>
             <Box fontWeight="semibold" style={{ textTransform: "uppercase" }}>
               {props.symb}

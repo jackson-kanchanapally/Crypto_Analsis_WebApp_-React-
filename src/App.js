@@ -1,11 +1,15 @@
-
+import { BrowserRouter} from "react-router-dom";
 import Cryp from './components/Cryp';
 import { ChakraProvider } from '@chakra-ui/react';
+
 
 function App() {
   return (
     <ChakraProvider>
-    <Cryp/>
+
+      <Cryp/>
+ 
+ 
     </ChakraProvider>
   );
 }

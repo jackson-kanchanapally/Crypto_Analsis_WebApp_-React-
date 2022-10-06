@@ -73,7 +73,7 @@ export default function Cryp() {
           width={["25vw", "15vw"]}
           value={top}
           color="gray.500"
-          placeholder="Select option"
+          
         >
           <option bg="red" value="10">
             Top 10
@@ -89,7 +89,7 @@ export default function Cryp() {
           width={["25vw", "15vw"]}
           value={cur}
           color="gray.500"
-          placeholder="Select option"
+         
         >
           <option bg="red" value="USD">
             USD
